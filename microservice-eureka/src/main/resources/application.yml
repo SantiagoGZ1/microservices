@@ -1,0 +1,21 @@
+#en microservicios se suele trabajar con archivos .yml en vez de properties
+server:
+   port: 8761 #puerto por defecto de eureka
+
+spring:
+   application:
+      name: msvc-eureka #nombre del microservicio
+   config:
+      import: optional:configserver:http://localhost:8888
+      #se le indica la ruta del config server
+
+#configuración del servidor de eureka para que los msvc se incriban en el
+eureka:
+   instance:
+      hostname: localhost
+   client:
+      register-with-eureka: false #para que eureka no se registre a si misma en el servidor
+      fetch-registry: false
+      server-url:
+         defaultZone: http://localhost:${server.port}/eureka
+         #referencia a la propiedad del puerto por si se cambia ${server.port}

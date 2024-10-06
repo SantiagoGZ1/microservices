@@ -1,0 +1,13 @@
+Api Gateway: Quien se encarga de recibir el request del usuario y la direcciona al microservicio pedido. SIEMPRE se debe hacer la peticiones desde este tipo de puertas de entrada o microservicio.
+
+Microservicios
+Estos microservicios se pueden comunicar por medio de una petición http rest
+Courses: PstgresSql
+Students: MySql
+No hay problema si los dos microservices apunten a una misma base de datos
+
+Otros microservices
+Eureka (servidor de registro): Los microservices está configurados en diferentes, estarlas confirando es cansado, Eureka se va a encargar de registrar todos los microservicios en un solo lugar, como un listado y lo hace solamente con el nombre.
+ConfigServer: Administra/almacena la configuración properties de cada microservice, entonces cada que un microservice se ejecuta va a consultar el properties al ConfigServer.
+
+el cuadrito azul en los archivos significa que es un modulo
