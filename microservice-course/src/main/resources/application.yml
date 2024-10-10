@@ -9,7 +9,7 @@ spring:
    datasource:
       driver-class-name: org.postgresql.Driver #config database mysql
       url: jdbc:postgresql://localhost:5432/coursesdb
-      username: root
+      username: santiagoGZ
       password: Bleachh2233+
    jpa:
       hibernate:
