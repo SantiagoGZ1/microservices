@@ -1,4 +1,4 @@
-package entities;
+package com.microservice.course.entities;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

@@ -1,7 +1,7 @@
 package com.microservice.course.controller;
 
 import com.microservice.course.service.CourseService;
-import entities.Course;
+import com.microservice.course.entities.Course;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("api/course")
+@RequestMapping("/api/course")
 public class CoursesController {
 
   @Autowired
@@ -39,6 +39,14 @@ public class CoursesController {
       return ResponseEntity.status(HttpStatus.NOT_FOUND).body("There are not students");
     }
     return ResponseEntity.ok(courses);
+  }
+
+  //endpoint de petición de metodo heredado de msvc student
+  @GetMapping("/serch-students/{idCourse}")
+  public ResponseEntity<?> findStudentsByIdCourse(@PathVariable Long idCourse){
+
+    return ResponseEntity.ok(courseService.findStudentsByIdCourse(idCourse));
+
   }
 
 }

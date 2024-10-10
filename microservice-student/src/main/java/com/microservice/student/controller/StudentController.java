@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("api/student")
+@RequestMapping("/api/student")
 public class StudentController {
 
   @Autowired
@@ -43,5 +43,13 @@ Por ejemplo, si tienes un método que puede devolver un valor de cualquier tipo,
       return ResponseEntity.ok(students);
   }
 
+  /*
+  End point para obtener estudiantes por id de curso.
+  esta es la petición que se le va a mandar a cursos para que tambien pueda tener esa info
+   */
+  @GetMapping("/search-by-course/{idCourse}")
+  public ResponseEntity<?> findByIdCourse(@PathVariable Long idCourse){
+    return ResponseEntity.ok(studentService.findByIdCourse(idCourse));
+  }
 
 }
