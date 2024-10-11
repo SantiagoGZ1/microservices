@@ -9,8 +9,8 @@ spring:
    datasource:
       driver-class-name: org.postgresql.Driver #config database mysql
       url: jdbc:postgresql://localhost:5432/coursesdb
-      username: santiagoGZ
-      password: Bleachh2233+
+      username: santiago
+      password: Bleachh8899+
    jpa:
       hibernate:
          ddl-auto: create #cada que se levante la app genere automaticamente las tablas
