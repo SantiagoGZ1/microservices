@@ -9,7 +9,7 @@ spring:
       import: optional:configserver:http://localhost:8888
       #se le indica la ruta del config server
 
-#configuración del servidor de eureka para que los msvc se incriban en el
+#configuraciï¿½n del servidor de eureka para que los msvc se incriban en el
 eureka:
    instance:
       hostname: localhost
