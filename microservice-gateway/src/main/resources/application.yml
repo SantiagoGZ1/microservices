@@ -1,7 +1,9 @@
 server:
-   port: 8080 #msvc por defecto
+   port: 8080 # msvc por defecto
 
 spring:
+   main:
+      web-application-type: reactive
    config:
       import: optional:configserver:http://localhost:8888
    application:
@@ -11,8 +13,13 @@ spring:
          discovery:
             locator:
                enabled: true
+               lowerCaseServiceId: true
          routes:
-            -  id: students-msvc
-               uri: http://localhost:8090
-               predicates:
-                  - Path=/api/student/**
+            - id: students
+              uri: http://localhost:8090
+              predicates:
+                 - Path=/api/student/**
+            - id: courses
+              uri: http://localhost:9090
+              predicates:
+                 - Path=/api/course/**

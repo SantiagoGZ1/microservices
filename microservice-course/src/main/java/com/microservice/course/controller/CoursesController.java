@@ -44,7 +44,6 @@ public class CoursesController {
   //endpoint de petición de metodo heredado de msvc student
   @GetMapping("/search-students/{idCourse}")
   public ResponseEntity<?> findStudentsByIdCourse(@PathVariable Long idCourse){
-
     return ResponseEntity.ok(courseService.findStudentsByIdCourse(idCourse));
 
   }
