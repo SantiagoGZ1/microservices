@@ -11,3 +11,5 @@ Eureka (servidor de registro): Los microservices está configurados en diferente
 ConfigServer: Administra/almacena la configuración properties de cada microservice, entonces cada que un microservice se ejecuta va a consultar el properties al ConfigServer.
 
 el cuadrito azul en los archivos significa que es un modulo
+
+Se puede respaldar la configuración del config con git
