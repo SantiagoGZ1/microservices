@@ -1,28 +1,5 @@
-server:
-   port: 9090
-   #por defecto spring funciona en el 8080
-   #en este caso lo cambiamos para que no trabajen todos desde el mismo puerto
-
 spring:
    application:
       name: msvc-course
-   datasource:
-      driver-class-name: org.postgresql.Driver #config database mysql
-      url: jdbc:postgresql://localhost:5432/coursesdb
-      username: santiago
-      password: Bleachh8899+
-   jpa:
-      hibernate:
-         ddl-auto: create #cada que se levante la app genere automaticamente las tablas
-         database: postgresql
-         database-platform: org.hibernate.dialect.PostgresqlDialect
    config:
       import: optional:configserver:http://localhost:8888
-
-#config msvc para que se registre en Eureka
-eureka:
-   instance:
-      hostname: localhost
-   client:
-      service-url:
-         defaultZone: http://localhost:8761/eureka
